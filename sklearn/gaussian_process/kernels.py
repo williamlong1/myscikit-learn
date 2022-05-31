@@ -1532,6 +1532,7 @@ class RBF(StationaryKernelMixin, NormalizedKernelMixin, Kernel):
         """
         X = np.atleast_2d(X)
         length_scale = _check_length_scale(X, self.length_scale)
+        print(X) # WILLIAMLONG1
         if Y is None:
             dists = pdist(X / length_scale, metric="sqeuclidean")
             K = np.exp(-0.5 * dists)
